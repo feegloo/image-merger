@@ -1,7 +1,16 @@
 # chatgpt-image-merger
 
-usage
+### prepare
 
+1. put your files into "convert" folder (siblings to `script.sh`)
+
+```
+chmod +x script.sh
+```
+
+2. output will be written to "convert/image.jpeg"
+ 
+### usage
 
 merge vertically
 ```
