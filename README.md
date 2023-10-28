@@ -26,3 +26,9 @@ merge in 2x2 "matrix" (supports NxM)
 ```
 ./script 2x2
 ```
+
+
+merge in 3x2 "matrix" (3 rows, 2 columns)
+```
+./script 3x2
+```
