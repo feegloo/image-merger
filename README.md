@@ -22,13 +22,15 @@ merge horizontally
 ./script -h
 ```
 
-merge in 2x2 "matrix" (supports NxM)
+"matrix" (supports 2x2, 3x2, 2x3)
+
+merge in 2x2
 ```
 ./script 2x2
 ```
 
 
-merge in 3x2 "matrix" (3 rows, 2 columns)
+merge in 3x2 "matrix" (3 columns, 2 rows)
 ```
 ./script 3x2
 ```
