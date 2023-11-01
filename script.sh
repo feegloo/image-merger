@@ -21,7 +21,7 @@ if [ $# -eq 1 ]; then
   elif [[ $matrix_type =~ ^[0-9]+x[0-9]+$ ]]; then
     merge_type="matrix"
   else
-    echo "Invalid matrix configuration. Use -v, -h, or specify the matrix configuration (e.g., 2x2 or 3x2)."
+    echo "Invalid matrix configuration. Use -v, -h, or specify the matrix configuration (e.g., 2x2, 3x2, or 2x3)."
     exit 1
   fi
 else
@@ -111,8 +111,22 @@ elif [ "$merge_type" = "matrix" ]; then
 
     # Clean up intermediate "image1.jpeg", "image2.jpeg", and "image3.jpeg"
     rm "$convert_dir/image1.jpeg" "$convert_dir/image2.jpeg" "$convert_dir/image3.jpeg"
+  elif [ "$matrix_type" = "2x3" ] && [ "$num_files" -eq 6 ]; then
+    # Handle a 2x3 matrix
+    first_row=("${sort_files[0]}" "${sort_files[1]}" "${sort_files[2]}")
+    second_row=("${sort_files[3]}" "${sort_files[4]}" "${sort_files[5]}")
+
+    # Merge horizontally in two steps
+    convert "${first_row[@]}" +append "$convert_dir/image1.jpeg" > /dev/null 2>&1
+    convert "${second_row[@]}" +append "$convert_dir/image2.jpeg" > /dev/null 2>&1
+
+    # Merge vertically to produce the final "image.jpeg"
+    convert "$convert_dir/image1.jpeg" "$convert_dir/image2.jpeg" -append "$convert_dir/image.jpeg" > /dev/null 2>&1
+
+    # Clean up intermediate "image1.jpeg" and "image2.jpeg"
+    rm "$convert_dir/image1.jpeg" "$convert_dir/image2.jpeg"
   else
-    echo "Invalid number of files for the specified matrix configuration. Use 2x2 or 3x2 for the respective matrix."
+    echo "Invalid number of files for the specified matrix configuration. Use 2x2, 3x2, or 2x3 for the respective matrix."
     exit 1
   fi
 fi
