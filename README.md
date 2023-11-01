@@ -22,23 +22,23 @@ chmod +x script.sh
 
 merge vertically
 ```
-./script -v
+./script.sh -v
 ```
 
 merge horizontally
 ```
-./script -h
+./script.sh -h
 ```
 
 "matrix" (supports 2x2, 3x2, 2x3)
 
 merge 2x2 (2 rows, 2 columns)
 ```
-./script 2x2
+./script.sh 2x2
 ```
 
 
 merge 3x2 (3 rows, 2 columns)
 ```
-./script 3x2
+./script.sh 3x2
 ```
