@@ -2,9 +2,9 @@
 
 Bash script for merging N-images into 1 image - horizontally, vertically or in Matrix (2x2, 2x3, 3x2, 3x3)
 
-Images in `convert` folder can have random names, but only `.jpg` extension is supported.
+Images in `convert` folder can have random names, but only `.jpeg` extension is supported.
 
-Images can also be named like `1.jpg 2.jpg 3.jpg`, to give custom order of merged images.
+Images can also be named like `1.jpeg 2.jpeg 3.jpeg`, to give custom order of merged images.
 
 -- 
 
