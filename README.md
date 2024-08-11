@@ -1,4 +1,4 @@
-# chatgpt-image-merger
+# image-merger
 
 Bash script for merging N-images into 1 image - horizontally, vertically or in Matrix (2x2, 2x3, 3x2, 3x3)
 
